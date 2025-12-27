@@ -3,4 +3,8 @@
   publish = "build"
 
 [build.environment]
+<<<<<<< HEAD
   NODE_VERSION = "20"
+=======
+  NODE_VERSION = "20"
+>>>>>>> 8b6e75867e59bcfcbdfa1a88236e4679878a9318
