@@ -1,5 +1,4 @@
 <script lang="ts">
-    import CategorySidebar from "$lib/components/CategorySidebar.svelte";
     let { data } = $props();
     const { category, products: items } = data;
 </script>
@@ -38,7 +37,7 @@
                         </div>
                         <h3 class="text-stone-800 font-medium line-clamp-2 group-hover:text-amber-800 transition">
                             {product.title}
-                        </h3>
+                        </h3> 
                         <p class="mt-1 text-lg font-bold text-stone-900">
                             {product.price} ₽
                         </p>

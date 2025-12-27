@@ -1,6 +1,8 @@
 <script lang="ts">
-import { X, Menu, ChevronRight, Search } from 'lucide-svelte';
-import { fade, fly } from 'svelte/transition';
+    import { X, Menu, ChevronRight, Search } from 'lucide-svelte';
+    import { fade, fly } from 'svelte/transition';
+    import { favorites } from '$lib/favorites.svelte';
+    import { Heart } from 'lucide-svelte';
 
     // Получаем список категорий как пропс
     let { categories } = $props();
@@ -53,6 +55,17 @@ import { fade, fly } from 'svelte/transition';
                 <Search size={18} class="absolute left-3 top-1/2 -translate-y-1/2 text-stone-400" />
             </form>
         </div>
+
+        <a href="/favorites" onclick={toggleMenu} class="flex items-center justify-between p-2 rounded hover:bg-stone-100">
+            <div class="flex items-center gap-3 text-stone-800 font-medium">
+                <Heart size={18} /> Избранное
+            </div>
+            {#if favorites.ids.length > 0}
+                <span class="bg-amber-900 text-white text-[10px] px-2 py-0.5 rounded-full">
+                    {favorites.ids.length}
+                </span>
+            {/if}
+        </a>
 
         <div class="flex-1 overflow-y-auto p-4 space-y-6">
             

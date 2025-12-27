@@ -1,6 +1,9 @@
 <script lang="ts">
     import { Home, HelpCircle, Info } from 'lucide-svelte';
     import { Search } from 'lucide-svelte';
+    import { favorites } from '$lib/favorites.svelte';
+    import { Heart } from 'lucide-svelte';
+
 
     function toggleMenu() {
     }
@@ -35,6 +38,16 @@
             </a>
             <a href="/about" onclick={toggleMenu} class="flex items-center gap-3 p-2 rounded hover:bg-stone-100 text-stone-800 font-medium">
                 <Info size={18} /> О нас
+            </a>
+            <a href="/favorites" onclick={toggleMenu} class="flex items-center justify-between p-2 rounded hover:bg-stone-100">
+                <div class="flex items-center gap-3 text-stone-800 font-medium">
+                    <Heart size={18} /> Избранное &nbsp;
+                </div>
+                {#if favorites.ids.length > 0}
+                    <span class="bg-amber-900 text-white text-[10px] px-2 py-0.5 rounded-full">
+                        {favorites.ids.length}
+                    </span>
+                {/if}
             </a>
         </nav>
     </div>

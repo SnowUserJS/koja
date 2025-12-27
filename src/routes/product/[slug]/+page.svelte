@@ -1,6 +1,7 @@
 <script lang="ts">
     import { ShoppingBag } from 'lucide-svelte';
     import { onMount } from 'svelte';
+    import FavoriteButton from '$lib/components/FavoriteButton.svelte';
     let scrollProgress = $state(0);
 
     onMount(() => {
@@ -96,6 +97,7 @@
                class="inline-flex items-center justify-center gap-3 bg-stone-800 text-white w-full md:w-auto px-10 py-4 rounded-lg hover:bg-stone-700 transition shadow-lg shadow-stone-200">
                 <ShoppingBag size={20} /> Купить сейчас
             </a>
+            &nbsp; <FavoriteButton productId={product.id} />
         </div>
     </div>
 
@@ -109,7 +111,7 @@
                             <img src={item.imageUrl} alt={item.title} class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
                         </div>
                         <h4 class="font-medium text-stone-800 line-clamp-1 group-hover:text-amber-800 transition">{item.title}</h4>
-                        <p class="text-amber-800 font-bold">{item.price} ₽</p>
+                        <p class="text-amber-800 font-bold">{item.price} ₽</p> 
                     </a>
                 {/each}
             </div>

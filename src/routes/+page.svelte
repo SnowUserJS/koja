@@ -1,5 +1,6 @@
 <script lang="ts">
     import CategorySidebar from '$lib/components/CategorySidebar.svelte';
+    import FavoriteButton from '$lib/components/FavoriteButton.svelte';
     let { data } = $props();
     let items = $derived(data.initialProducts);
     let offset = $derived(21);
