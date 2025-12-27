@@ -8,10 +8,7 @@ const config = {
 	kit: {
 		// adapter-auto только пробует угадать среду, 
 		// а этот адаптер гарантирует работу функций Netlify
-		adapter: adapter({
-			edge: false, // выключи, если используешь Node-специфичные пакеты
-			split: false
-		})
+		adapter: adapter()
 	}
 };
 

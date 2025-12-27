@@ -1,5 +1,6 @@
 <script lang="ts">
     import { Instagram, Facebook, Twitter, Mail } from 'lucide-svelte';
+    import ScrollToTop from '$lib/components/ScrollToTop.svelte';
 </script>
 
 <footer class="bg-stone-900 text-stone-400 py-12 border-t-4 border-amber-900 mt-auto">
@@ -31,12 +32,12 @@
                 <a href="#" class="p-2 bg-stone-800 rounded-full hover:bg-amber-800 transition text-white">
                     <Facebook size={20} />
                 </a>
-                <a href="#" class="p-2 bg-stone-800 rounded-full hover:bg-amber-800 transition text-white">
+                <a href="https://x.com/ntSportPit" class="p-2 bg-stone-800 rounded-full hover:bg-amber-800 transition text-white">
                     <Twitter size={20} />
                 </a>
             </div>
-            <a href="mailto:info@leather.shop" class="flex items-center gap-2 mt-6 hover:text-white transition">
-                <Mail size={16} /> info@leather.shop
+            <a href="mailto:info@kojashop.ru" class="flex items-center gap-2 mt-6 hover:text-white transition">
+                <Mail size={16} /> info@kojashop.ru
             </a>
         </div>
     </div>
@@ -44,4 +45,5 @@
     <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-stone-800 text-sm text-center">
         &copy; {new Date().getFullYear()} Leather Shop. Все права защищены.
     </div>
+    <ScrollToTop />
 </footer>

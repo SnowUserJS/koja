@@ -27,11 +27,26 @@
             isLoading = false;
         }
     }
+
+    const websiteJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://kojashop.ru/",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://kojashop.ru/search?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+        }
+    };
 </script>
 
 <svelte:head>
     <title>Leather Shop | Изделия из натуральной кожи</title>
-    <meta name="description" content="Магазин качественных кожаных изделий: сумки, кошельки, ремни." />
+    {@html `<script type="application/ld+json">${JSON.stringify(websiteJsonLd)}</script>`}
+    <meta name="description" content="Кожаные изделия премиум-качества — сумки, портмоне и аксессуары из натуральной кожи. Идеальный выбор для повседневной жизни." />
 </svelte:head>
 
 
